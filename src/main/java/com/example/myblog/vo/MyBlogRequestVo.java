@@ -8,6 +8,7 @@ public class MyBlogRequestVo implements Serializable {
     /**
      *
      */
+    private int id;
     private String title;
     private String content;
     private String [] categories;
