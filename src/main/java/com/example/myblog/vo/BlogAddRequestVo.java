@@ -11,8 +11,8 @@ public class BlogAddRequestVo {
 	private String content     ;
 	private String author      ;
 	private String type        ;
-	private Date create_date ;
-	private String create_by   ;
-	private Date update_date ;
-	private String update_by   ;
+	private Date createDate ;
+	private String createBy   ;
+	private Date updateDate ;
+	private String updateBy   ;
 }

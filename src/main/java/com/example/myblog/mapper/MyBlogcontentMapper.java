@@ -1,17 +1,23 @@
 package com.example.myblog.mapper;
 
+import com.example.myblog.bean.MyblogContent;
 import com.example.myblog.vo.BlogAddRequestVo;
-import com.example.myblog.vo.UserRegisterRequestVo;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 
-@Mapper
-public interface Blogcontent {
+import java.util.List;
 
-    @Select("insert into blogcontent(title,content,author,type,create_date,create_by,update_date,update_by)" +
+@Mapper
+public interface MyBlogcontentMapper {
+
+    @Insert("insert into blogcontent(title,content,author,type,create_date,create_by,update_date,update_by)" +
             "VALUES(#{title},#{content},#{author},#{type},#{createDate},#{createBy},#{updateDate},#{updateBy});")
     @Options(keyProperty="id",keyColumn="id",useGeneratedKeys=true)
-    public int blogAdd(BlogAddRequestVo blogAddRequestVo);
+    public Integer blogAdd(BlogAddRequestVo blogAddRequestVo);
+
+    @Select("select * from blogcontent;")
+    public List<MyblogContent> showBlog();
 
 }
